@@ -419,6 +419,75 @@ body {
 }
 .modal-close:hover { background: var(--blue); }
 
+/* ── HERO CTA BUTTON ── */
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 1rem;
+  background: var(--blue); color: var(--white);
+  padding: 1.1rem 2rem; text-decoration: none;
+  font-family: var(--font-mono); font-size: 1rem; font-weight: 700; letter-spacing: .06em;
+  border: 2px solid var(--blue);
+  margin-bottom: 2.5rem;
+  position: relative; overflow: hidden;
+  transition: background .25s, color .25s, transform .2s;
+}
+.hero-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--ink); transform: translateX(-102%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+}
+.hero-cta:hover::before { transform: translateX(0); }
+.hero-cta:hover { color: var(--paper); border-color: var(--ink); transform: translateY(-3px); }
+.hero-cta-text, .hero-cta-arrow { position: relative; z-index: 1; }
+.hero-cta-arrow { font-size: 1.2rem; transition: transform .2s; }
+.hero-cta:hover .hero-cta-arrow { transform: translateX(5px); }
+
+/* ── REGISTER CTA (신청카드 내) ── */
+.rc-cta-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
+.rc-cta-desc { font-size: .95rem; color: rgba(255,255,255,.7); line-height: 1.7; }
+.rc-cta-desc strong { color: var(--white); }
+
+.rc-cta-btn {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--blue); color: var(--white);
+  padding: 1.25rem 1.5rem; text-decoration: none;
+  font-family: var(--font-mono); font-size: 1rem; font-weight: 700; letter-spacing: .05em;
+  border: 2px solid var(--blue-light);
+  transition: background .2s, transform .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.rc-cta-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(255,255,255,.08);
+  opacity: 0; transition: opacity .2s;
+}
+.rc-cta-btn:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,87,255,.4); }
+.rc-cta-btn:hover::after { opacity: 1; }
+.rc-cta-arrow { font-size: 1.3rem; transition: transform .2s; }
+.rc-cta-btn:hover .rc-cta-arrow { transform: translateX(6px); }
+
+.rc-benefits {
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+}
+.rc-benefit {
+  font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em;
+  color: rgba(255,255,255,.55);
+}
+
+/* ── FINAL TYPE CTA ── */
+.ft-cta {
+  display: inline-flex; align-items: center; gap: .75rem;
+  margin-top: 2.5rem;
+  background: transparent; color: var(--ink);
+  padding: 1rem 2rem; text-decoration: none;
+  font-family: var(--font-mono); font-size: .95rem; font-weight: 700; letter-spacing: .08em;
+  border: 2px solid var(--ink);
+  transition: background .25s, color .25s, transform .2s;
+}
+.ft-cta:hover {
+  background: var(--blue); color: var(--white);
+  border-color: var(--blue); transform: translateY(-3px);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .what-grid { grid-template-columns: 1fr; gap: 2.5rem; }
